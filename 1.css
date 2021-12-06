@@ -1,0 +1,926 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  background: #FAEEE0;
+  color: black;
+  opacity: 0;
+  transition: 3s;
+}
+header,
+nav,
+.content-container,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ========== Menu ==========*/
+header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 1em;
+  padding-left: 7em;
+  padding-right: 5em;
+  background: #DBD0C0;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+#logo {
+  width: 3em;
+  height: 3em;
+  transition: 0.3s;
+}
+#logo:hover {
+  transform: scale(1.2);
+}
+nav {
+  justify-content: space-between;
+  width: max-content;
+}
+nav a {
+  text-decoration: none;
+  padding: 1em 1em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  color: black;
+  transition: 0.3s;
+  font-family: "Palatino Linotype";
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  border: 1px solid #f05454;
+} 
+
+/* ========== Footer ==========*/
+footer {
+  background: #F9CF93;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  padding: 2.3em;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+
+
+
+/* СКРОЛЛ БАР */
+
+*::-webkit-scrollbar {
+  width: 0.7em;
+}
+*::-webkit-scrollbar-track {
+  background: #F9E4C8;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #F9CF93, #DBD0C0);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #36d1f8, pink);
+}
+
+
+
+
+
+
+
+/* ОСНОВНОЕ */
+section {
+  width: 100%;
+  height: 100vh;
+}
+#section-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@font-face { 
+  font-family: 'Race Font'; 
+  src: url('font2.ttf')  format('truetype');                
+  font-weight: normal; 
+  font-style: normal; 
+}
+h2.main{
+  padding-top: 5rem;
+  background: linear-gradient(45deg, orangered, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  font-size: 2em;
+  font-family: 'Race Font';
+  padding-right: 0.4em;
+  padding-left: 0.4em;
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+div.supmain {
+  width: 89%;
+  height: 74%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+div.main {
+  background: linear-gradient(45deg, #03d2f5, #48fc14);
+  width: 10.5rem;
+  height: 80%;
+  transform: skewX(10deg);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+div.main:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  filter: blur(25px);
+  background: linear-gradient(45deg, #03d2f5, #48fc14);
+  
+}
+div.inmainsup {
+  position: absolute;
+  width: 260%;
+  height: 24rem;
+  transform: skewX(-10deg);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, .3);
+  border: 1px solid white;
+
+}
+div.pod {
+  position: absolute;
+  background: grey;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .4;
+  transition: .3s;
+}
+div.pod:after {
+  transition: .3s;
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 15rem;
+  top: -2rem;
+  font-size: 0.8em;
+  font-style: italic;
+  opacity: 0;
+}
+div.pod:hover {
+  cursor: help;
+  opacity: .9;
+}
+div.pod:hover:after {
+  opacity: 1;
+}
+
+a.inmain {
+  background: #171515;
+  background: linear-gradient(135deg, #171616 0%, #1b1717 25%, #16488e 50%, #e4206f 75%, #620c84 100%);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 80%;
+  height: 65%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: .5s all;
+  border-radius: 20px;
+}
+#imgmain1 {  
+  
+}
+#imgmain2 {
+  background-image: url(https://cdn.nur.kz/images/1120/40dc0b16ab559082.jpeg);
+}
+#imgmain3 {
+  background-image: url(https://img.sportsdaily.ru/iblock/bb4/bb412a7c6168d1e119a33d23cd49fea3/c64578abef36eeae1b59d3c8659fb266.jpg);
+}
+div.imgback {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: .5;
+  mix-blend-mode: screen;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+p.imgback {
+  color: white;
+  opacity: 0;
+  transition: .5s;
+  font-size: 1.5em;
+}
+h3.inmain {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: 1.4em;
+}
+a.inmain:hover {
+  background-position: 100% 100%;
+}
+a.inmain:hover p {
+  opacity: 1;
+}
+h3.inmain {
+  width: 100%;
+}
+
+
+#section-2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+
+  border-top: 2px solid white;
+}
+div.unuse {
+  display: none;
+}
+
+
+
+
+
+/*ЛЕВЫЙ БЛОК */
+div.leftmenu {
+  position: sticky;
+  top: 0;
+  padding-top: 8em;
+  width: 15em;
+  background: whitesmoke;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-right: 2px solid white;
+}
+h3.leftblock {
+  padding-left: 1em;
+  padding-top: 2em;
+}
+li.leftblock {
+  padding-left: 2em;
+  padding-top: 1em;
+  list-style: none;
+}
+a.leftblock {
+  text-decoration: none;
+  color: black;
+}
+a.leftblock:hover {
+  text-decoration: underline;
+}
+
+
+/* БЛОК ТЕКСТА */
+#textblockmain {
+  margin-top: 0.5rem;
+}
+div.textblock {
+  width: 58%;
+  height: 100%;
+}
+p.text {
+  margin-bottom: 2em;
+  text-align: justify;
+  padding-left: 2rem;
+  margin-right: 1rem;
+  margin-top: 2em;
+}
+h3.text {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-top: -5.5em;
+  padding-top: 5.5em;
+}
+h4.text {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-top: -6.5em;
+  padding-top: 6.5em;
+}
+h4.zaglav {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-top: -5em;
+  padding-top: 6.5em;
+}
+
+/* БЛОК ИЗОРАЖЕНИЙ */
+#imagesblockmain {
+  height: 120rem;
+  margin-top: 0.5rem;
+}
+div.imagesblock {
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+div.imgdiv {
+  width: 80%;
+  height: 20em;
+  border: 3px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Sylfaen";
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+img.inimgdiv:hover{
+  transform: scale(1.2);
+}
+img.inimgdiv {
+  width: 90%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+#img1 {
+  height: 65%;
+}
+#img2 {
+  height: 55%;
+}
+#img3 {
+  height: 55%;
+}
+#img4 {
+  height: 60%;
+}
+#img5 {
+  width: 62%;
+  height: 72%;
+}
+
+
+
+/* ПРОКРУТКА ВНИЗ */
+div.pointer {
+  opacity: 0.6;
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+  width: 12rem;
+  height: 3rem;
+  background: lightblue;
+  border-radius: 10px;
+  transition: 0.3s;
+  z-index: 1;
+}
+a.pointer {
+  width: 100%;
+  height: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  opacity: .9;
+}
+
+div.pointer:before {
+  content: "↓";
+  font-family: FontAwesome;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2rem;
+  background-color: rgba($overlay-color,0.3);
+  border-radius: 0 50% 50% 0;
+  transform: scale(0,1);
+  transform-origin: left center;
+  transition: all 0.2s linear 0s;
+}
+  
+div.pointer:hover {
+  opacity: 1;
+  text-indent: 30px;
+  width: 12.5rem;
+}
+    
+div.pointer:hover:before {
+  transform: scale(1,1);
+  text-indent: 0;
+}
+  
+
+
+
+/* ИЗОБРАЖЕНИЯ НА ВЕСЬ ЭКРАН */
+
+.popup {
+  position: fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  display:none;
+  text-align:center;
+  z-index: 3;
+}
+img.inimgdiv {
+  cursor: pointer;
+}
+.popup_bg {
+  background:rgba(0,0,0,0.4);
+  position: fixed;
+  z-index: 1;
+  height:100%;
+  width:100%;
+}
+.popup_img {
+  position: relative;
+  z-index: 2;
+  max-height:94%;
+  max-width:94%;
+  left: 0;
+} 
+
+
+
+/* ВИДЫ ГОНОК */
+
+#section1-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+#textblock1 {
+  margin-top: 7rem;
+
+}
+#imagesblock1 {
+  margin-top: 5rem;
+}
+
+ul.text {
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+}
+ul.text2 {
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  width: 91%;
+}
+h3.text {
+  width: 95%;
+  border-bottom: 1px solid black;
+}
+ul.text2 li {
+  padding-top: 6.5em;
+  margin-top: -5.5em;
+}
+ul.text2 img {
+  margin-top: 1em;
+  width: 98.5%;
+  height: auto;
+  margin-bottom: 1em;
+}
+#imagesblock1 img {
+  height: auto;
+}
+
+
+
+
+/* Легендарные автомобили */
+
+
+#section2-1 {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+} 
+#textblock2 {
+  margin-top: 7rem;
+
+}
+#imagesblock2 {
+  margin-top: 6rem;
+  width: 27%;
+}
+
+p.text2 {
+  text-align: justify;
+  margin-right: 1rem;
+  margin-top: 1em;
+}
+.imgdivsup {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#imgdivsup1 {
+  height: 48.5rem;
+}
+#imgdivsup2 {
+  height: 56.5rem;
+}
+#imgdivsup3 {
+  height: 50.5rem;
+}
+#imgdivsup4 {
+  height: 52.5rem;
+}
+#imgdivsup5 {
+  height: 46.5rem;
+}
+#imgdivsup6 {
+  height: 50.5rem;
+}
+#imgdivsup7 {
+  height: 42.5rem;
+}
+#imgdivsup8 {
+  height: 53.5rem;
+}
+#imgdivsup9 {
+  height: 58rem;
+}
+#imgdivsup10 {
+  height: 51rem;
+}
+/* ТАЙМЕР */
+.timer {
+  width: 94%;
+  height: 6rem;
+
+}
+.timer__items {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#texttimer {
+  text-align: center;
+}
+.timer__days:after {
+  content: attr(data-tooltip);
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  top: 1.5rem;
+  right: 1.9rem;
+}
+.timer__hours:after {
+  content: attr(data-tooltip);
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  top: 1.5rem;
+  right: 1.9rem;
+}
+.timer__minutes:after {
+  content: attr(data-tooltip);
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  top: 1.5rem;
+  right: 1.9rem;
+}
+.timer__seconds:after {
+  content: attr(data-tooltip);
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  top: 1.5rem;
+  right: 1.9rem;
+}
+
+/* Самые известные автогонки */
+#section4-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+#textblock4 {
+  margin-top: 7rem;
+
+}
+#imagesblock4 {
+  margin-top: 8rem;
+  width: 27%;
+}
+h4.text3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  opacity: .7;
+}
+#imgdivsup31 {
+  height: 54.5rem;
+}
+#imgdivsup32 {
+  height: 60.5rem;
+}
+#imgdivsup33 {
+  height: 52.5rem;
+}
+#imgdivsup34 {
+  height: 55rem;
+}
+#imgdivsup35 {
+  height: 52.5rem;
+}
+#imgdivsup36 {
+  height: 49.5rem;
+}
+#imgdivsup37 {
+  height: 55.5rem;
+}
+#imgdivsup38 {
+  height: 58rem;
+}
+#imgdivsup39 {
+  height: 57rem;
+}
+#imgdivsup310 {
+  height: 55.5rem;
+}
+
+/* САМЫЕ УСПЕШНЫЕ ПИЛОТЫ */
+#ul3 {
+  list-style-type: none;
+}
+#section3-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+#textblock3 {
+  margin-top: 7rem;
+
+}
+#imagesblock3 {
+  margin-top: 8rem;
+  width: 27%;
+}
+#imgdivsup41 {
+  height: 60rem;
+}
+#imgdivsup42 {
+  height: 57.5rem;
+}
+#imgdivsup43 {
+  height: 53.5rem;
+}
+#imgdivsup44 {
+  height: 60rem;
+}
+#imgdivsup45 {
+  height: 64rem;
+}
+#imgdivsup46 {
+  height: 57rem;
+}
+#imgdivsup47 {
+  height: 60rem;
+}
+#imgdivsup48 {
+  height: 64rem;
+}
+#imgdivsup49 {
+  height: 60rem;
+}
+#imgdivsup410 {
+  height: 83rem;
+}
+
+/* ЛОАДЕР */
+#borders1 {
+  animation-name: rotation2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+} 
+
+#borders2 {
+  animation-name: rotation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+} 
+
+#borders3 {
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+} 
+
+#borders4 {
+  animation-name: rotation2;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+} 
+
+
+div.s1-container {
+  padding: 3em 3em;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+div.text {
+  position: fixed;
+  top: 52vh;
+}
+
+div.borders {
+  height: 12%;
+  width: 12%;
+  position: fixed;
+  top: 47vh;
+  right: 50wh;
+  border: 1px solid black;
+  border-radius: 13% 87% 70% 30% / 45% 45% 55% 55%;
+}
+
+
+@keyframes rotation {
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes rotation2 {
+    100% {
+        transform:rotate(-360deg);
+    }
+}
+.sec {
+  opacity: 0;
+}
+
+/*ТЕЛЕФОНЫ*/
+
+@media (max-width:720px){
+
+  header {
+    font-size: 0.6em;
+    height: 8em;
+    width: 100%;
+  }
+  section {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
+    font-size: 0.6em;
+    height: 6em;
+    padding: 0;
+  }
+  #section-1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div.supmain {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: -12em;
+    margin-bottom: -11em;
+  }
+  h2.main {
+    text-align: center;
+
+  }
+  div.imgdiv {
+    height: 12em;
+  }
+  div.main {
+    margin-top: 13em;
+    margin-bottom: 13em;
+    height: 30%;
+    width: 40%;
+  }
+  nav a {
+    padding: 0.3em;
+    width: 20%;
+    text-align: center;
+  }
+  nav {
+    margin-left: 0.7em;
+  }
+  div.supmain {
+    transform: scale(0.7);
+  }
+  
+  div.leftmenu {
+    width: 25%;
+    font-size: 0.5em;
+    padding-top: 20em;
+    padding-bottom: 100em;
+  }
+  div.textblock {
+    width: 45%;
+    font-size: 0.7em;
+  }
+  div.imagesblock,
+  div.imagesblock2 {
+    width: 30%;
+    font-size: 0.7em;
+  }
+  div.imgdiv {
+    height: 16em;
+    width: 90%;
+  }
+  img.inimgdiv {
+    width: 80%;
+    height: auto;
+  }
+  h3.text {
+  width: 70%;
+  border-bottom: 1px solid black;
+  }
+  div.pointer {
+    display: none;
+  }
+  .text {
+    width: 100%;
+    margin-left: -1em;
+  }
+  ul.text {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+ul.text2 {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  width: 91%;
+}
+
+}
