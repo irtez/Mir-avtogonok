@@ -54,9 +54,6 @@ nav a {
   font-size: 1.1em;
 }
 
-nav a:hover {
-  border: 1px solid #f05454;
-} 
 
 /* ========== Footer ==========*/
 footer {
@@ -89,7 +86,20 @@ footer {
 }
 
 
+/* меню */
 
+#marker {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #3503ad, #f7308c);
+  bottom: -1px;
+  transition: 0.3s;
+  border-radius: 4px;
+  z-index: 5;
+  margin-bottom: 1em;
+}
 
 
 
@@ -922,5 +932,4 @@ ul.text2 {
   text-align: justify;
   width: 91%;
 }
-
 }
