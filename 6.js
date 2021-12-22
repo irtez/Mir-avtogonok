@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const deadline = new Date(2022, 3, 20);
   // id таймера
   let timerId = null;
-  // склонение числительных
+  // склонение дней, часов, минут, секунд
   function declensionNum(num, words) {
     return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
   }
@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     $hours.textContent = hours < 10 ? '0' + hours : hours;
     $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
     $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
-    $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-    $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-    $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-    $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+    $days.setAttribute('data-tooltip', declensionNum(days, ['день', 'дня', 'дней']));
+    $hours.setAttribute('data-tooltip', declensionNum(hours, ['час', 'часа', 'часов']));
+    $minutes.setAttribute('data-tooltip', declensionNum(minutes, ['минута', 'минуты', 'минут']));
+    $seconds.setAttribute('data-tooltip', declensionNum(seconds, ['секунда', 'секунды', 'секунд']));
   }
   // получаем элементы, содержащие компоненты даты
   const $days = document.querySelector('.timer__days');
